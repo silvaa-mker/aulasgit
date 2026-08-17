@@ -2,11 +2,21 @@
 
 using namespace std;
 
+double calculaComissao(double vlVenda, double txComissao)
+
+{
+	return vlVenda * txComissao;
+}
+
+void mostraResultado(string nome, double Comissao){
+	cout << "vendedor: " << nome <<endl;
+	cout << "Comissao: R$ " << Comissao <<endl;	
+}
 int main(){
     string nome;
 	double valorVenda;
 	double taxaComissao = 0.05;
-	double comissao;
+	double Comissao;
 	
 	cout << "Digite seu nome: "<<endl;
 	cin >> nome;
@@ -14,10 +24,9 @@ int main(){
 	cout << "Digite o valor da venda: "<<endl;
 	cin >> valorVenda;
 	
-	comissao = valorVenda * taxaComissao;
+	Comissao = calculaComissao(valorVenda, taxaComissao);
 	
-	cout << "Vendedor: " << nome <<endl;
-	cout << "Comissao: R$ "	<<comissao <<endl;
-	
+	mostraResultado(nome, Comissao);
+		
 	return 0;
 }
